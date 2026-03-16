@@ -10,11 +10,7 @@ const ICE_SERVERS = [
   { urls: 'stun:stun1.l.google.com:19302' },
   { urls: 'stun:stun2.l.google.com:19302' },
   { urls: 'stun:stun3.l.google.com:19302' },
-  { urls: 'turn:openrelay.metered.ca:80',   username: 'openrelayproject', credential: 'openrelayproject' },
-  { urls: 'turn:openrelay.metered.ca:443',  username: 'openrelayproject', credential: 'openrelayproject' },
-  { urls: 'turns:openrelay.metered.ca:443', username: 'openrelayproject', credential: 'openrelayproject' },
-  { urls: 'turn:freestun.net:3479',  username: 'free', credential: 'free' },
-  { urls: 'turns:freestun.net:5350', username: 'free', credential: 'free' },
+  { urls: 'turn:openrelay.metered.ca:443', username: 'openrelayproject', credential: 'openrelayproject' }
 ];
 //  Attach stream to 
 function attachStream(el, stream) {
@@ -314,7 +310,7 @@ export default function Room() {
       });
     });
 
-    const hostPeerId = `me&u-host-${roomId}`;
+    const hostPeerId = `me-u-host-${roomId.replace(/[^a-zA-Z0-9-_]/g, '')}`;
 
 
     const peerConfig = {
