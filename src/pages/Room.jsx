@@ -174,7 +174,7 @@ function Lobby({ recipe, roomId, onJoin }) {
   return (
     <div className="room-lobby">
       <div className="room-lobby__card">
-        <div className="room-lobby__logo">Flavour<span>Kit</span> · Live</div>
+        <div className="room-lobby__logo">me<span>&</span>u · Live</div>
         {recipe ? (
           <div className="room-lobby__recipe">
             <img src={recipe.image} alt={recipe.title} className="room-lobby__recipe-img" />
@@ -439,7 +439,7 @@ export default function Room() {
   return (
     <div className="room-page">
       <nav className="room-nav">
-        <div className="room-nav__logo">Flavour<span>Kit</span> · Live</div>
+        <div className="room-nav__logo">me<span>&</span> · u</div>
         <div className="room-nav__center">
           <div className={`status-dot ${waiting ? 'waiting' : ''}`} />
           <span className="status-text">
